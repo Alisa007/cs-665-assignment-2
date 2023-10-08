@@ -9,6 +9,15 @@
 
 In this assignment, our primary objective is to design and implement a system simulating a delivery request platform, where various shops can create delivery requests and notify available drivers about them. Utilizing the Observer design pattern, we aim to achieve a loosely-coupled architecture between shops and drivers, ensuring that adding, modifying, or removing either entity does not affect the other. This enhances the system’s flexibility and scalability, making it adaptable to future changes or expansions, like introducing different kinds of observers or subjects.
 
+### Assumptions
+
+1. Observer Management: Observers are correctly managed (added and removed) by the client code using `registerObserver` and `removeObserver`.
+2. Update Mechanism: The `update()` method is the only way `Driver` objects receive and store `DeliveryRequest` objects.
+3. Validation: Input validation (e.g., checking for null or invalid address/product strings) is not implemented.
+4. Communication: The observer pattern is used for one-to-many communication from `Shop` to multiple `Driver` instances and assumes all observers need to be notified when a delivery request is created.
+5. Scalability: The code is designed for relatively small-scale applications where potential performance bottlenecks (e.g., iterating through all observers) are not a critical issue.
+6. Data Persistence: Data persistence (e.g., saving delivery requests or driver responses to a database) is not managed.
+
 # GitHub Repository Link:
 
 https://github.com/alisa007/cs-665-assignment-2
