@@ -33,10 +33,14 @@ public class TestDeliveryRequest {
         Driver driver1 = new Driver("Driver 1");
         Driver driver2 = new Driver("Driver 2");
         Driver driver3 = new Driver("Driver 3");
+        Driver driver4 = new Driver("Driver 4");
+        Driver driver5 = new Driver("Driver 5");
 
         shop.registerObserver(driver1);
         shop.registerObserver(driver2);
         shop.registerObserver(driver3);
+        shop.registerObserver(driver4);
+        shop.registerObserver(driver5);
 
         DeliveryRequest deliveryRequest = new DeliveryRequest("Laptop", "456 Avenue");
 
@@ -45,6 +49,8 @@ public class TestDeliveryRequest {
         assertEquals(deliveryRequest, driver1.getLastNotification());
         assertEquals(deliveryRequest, driver2.getLastNotification());
         assertEquals(deliveryRequest, driver3.getLastNotification());
+        assertEquals(deliveryRequest, driver4.getLastNotification());
+        assertEquals(deliveryRequest, driver5.getLastNotification());
     }
 
     @Test
