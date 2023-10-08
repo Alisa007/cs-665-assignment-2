@@ -1,29 +1,37 @@
 | CS-665       | Software Design & Patterns |
 | ------------ | -------------------------- |
 | Name         | ALISA BELOUSOVA            |
-| Date         | MM/DD/2023                 |
+| Date         | 10/10/2023                 |
 | Course       | Fall                       |
-| Assignment # |                            |
+| Assignment # | 2                          |
 
 # Assignment Overview
 
-Please add a paragraph or two overviewing the objectives of the assignment.
+In this assignment, our primary objective is to design and implement a system simulating a delivery request platform, where various shops can create delivery requests and notify available drivers about them. Utilizing the Observer design pattern, we aim to achieve a loosely-coupled architecture between shops and drivers, ensuring that adding, modifying, or removing either entity does not affect the other. This enhances the system’s flexibility and scalability, making it adaptable to future changes or expansions, like introducing different kinds of observers or subjects.
 
 # GitHub Repository Link:
 
-https://github.com/alisa007/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/alisa007/cs-665-assignment-2
 
 # Implementation Description
 
-For each assignment, please answer the following:
+## Flexibility
 
-- Explain the level of flexibility in your implementation, including how new object types can
-  be easily added or removed in the future.
-- Discuss the simplicity and understandability of your implementation, ensuring that it is
-  easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-  chosen.
+The implemented delivery system possesses a high degree of flexibility, primarily due to the use of the Observer design pattern. This pattern ensures that our `Shop` (subject) and `Driver` (observer) classes are loosely coupled. This means adding new observers (like perhaps, self-driving cars in the future) or modifying existing ones won’t necessitate changes in the `Shop` class, enhancing the system's adaptability to evolving requirements.
+
+## Simplicity and Understandability:
+
+The codebase is structured with simplicity and clarity in mind. Clear class and variable naming conventions, along with comprehensive documentation, ensures that the functionality of each class and method is easily discernible. Further, by adhering to the Single Responsibility Principle, each class is designed to encapsulate a single functionality, making the codebase easy to understand and navigate.
+
+## Avoidance of Duplicated Code:
+
+Duplicated code has been meticulously avoided through the conscientious use of methods and classes, ensuring that each functionality is implemented once and reused as necessary. For instance, notification logic is embedded within the `Shop` class and not duplicated across various `Driver` instances. This not only aids in maintaining and modifying the codebase but also in reducing the probability of introducing errors.
+
+## Design Patterns Used:
+
+The Observer design pattern is employed in this implementation to establish a one-to-many dependency between objects, so that when one object changes state, all its dependents are notified and updated automatically. This pattern was chosen for its ability to effectively decouple the `Shop` (subject) from the `Driver` (observer). Consequently, shops can notify drivers of delivery requests without needing to know anything about the drivers themselves. This decoupling between classes adheres to the Open/Closed Principle, enabling the easy addition of new observer types in the future without modifying existing code.
+
+# Commands
 
 ## Compile
 
